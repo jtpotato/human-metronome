@@ -156,16 +156,16 @@ struct GameResultView: View {
     }
 }
 
-struct ResultsPreviewView: View {
+struct GameResultPreviewView: View {
     // Fill with dummy data.
     @State var tapTimes = [427625.64031666674, 427625.80227683345, 427625.97286316677, 427626.1523317084, 427626.3315825001, 427626.5190010418, 427626.69617254176, 427626.8730185001]
     
     var body: some View {
-        ResultsView(tapTimes: $tapTimes)
+        GameResultView(tapTimes: $tapTimes)
     }
     
 }
 
 #Preview {
-    ResultsPreviewView()
+    GameResultPreviewView()
 }

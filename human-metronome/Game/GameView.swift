@@ -12,22 +12,24 @@ struct GameView: View {
     @State var path = NavigationPath()
     @State var tapTimes: [CFTimeInterval] = []
     
+    func onGameEnd() {
+        if (tapTimes.count > 8) {
+            tapTimes.removeFirst(tapTimes.count - 8)
+        }
+        tapCounter = 0
+        path.append("view-results")
+    }
+    
     var body: some View {
         NavigationStack(path: $path) {
             VStack(spacing: 40.0) {
                 Spacer()
                 Button(action: {
                     tapTimes.append(CACurrentMediaTime())
-                    let impactMed = UIImpactFeedbackGenerator(style: .medium)
-                    impactMed.impactOccurred()
                     tapCounter += 1
                     
                     if (tapCounter == 8) {
-                        if (tapTimes.count > 8) {
-                            tapTimes.removeFirst(tapTimes.count - 8)
-                        }
-                        tapCounter = 0
-                        path.append("view-results")
+                        onGameEnd()
                     }
                 }) {
                     Circle()
@@ -44,7 +46,7 @@ struct GameView: View {
                 destination in
                 
                 if (destination == "view-results") {
-                    ResultsView(tapTimes: $tapTimes)
+                    GameResultView(tapTimes: $tapTimes)
                 }
             }
             .padding()
