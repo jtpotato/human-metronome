@@ -9,68 +9,42 @@ import SwiftUI
 import Charts
 
 struct GameResultView: View {
-    @Binding var tapTimes: [Double]
+    @Environment(\.displayScale) var displayScale
     
-    func getAverage() -> Double {
-        let totalTime = tapTimes.last! - tapTimes.first!
-        
-        return totalTime / Double(tapTimes.count - 1)
-    }
+    var analysis: GameDataAnalysis
     
-    func getTimeTapDeltas() -> [TapEvent] {
-        var timeTapDeltas: [TapEvent] = []
-        var i = 1
-        while (i < tapTimes.count) {
-            let tapDelta = tapTimes[i] - tapTimes[i - 1]
-            let tapError = getAverage() - tapDelta
-            let tapErrorPercent = abs(tapError) / tapDelta
-            timeTapDeltas.append(TapEvent(
-                tapIndex: i,
-                tapDelta: tapDelta,
-                tapError: tapError,
-                tapErrorPercent: tapErrorPercent
-            ))
-            
-            i += 1
-        }
+    @MainActor func shareResult() -> Image {
+        let bpm = analysis.getBPM()
+        let accuracyPercent = 1 - analysis.getAverageErrorPercent()
         
-        return timeTapDeltas
-    }
-    
-    func getAverageErrorPercent() -> Double {
-        let tapEvents = getTimeTapDeltas()
+        let renderer = ImageRenderer(
+            content: ShareGraphic(accuracyPercent: accuracyPercent, bpm: bpm)
+        )
         
-        var errorPercentSum: Double = 0
+        renderer.scale = displayScale
         
-        for tapEvent in tapEvents {
-            errorPercentSum += tapEvent.tapErrorPercent
-        }
-        
-        print(errorPercentSum)
-        print(Double(tapEvents.count))
-        print(errorPercentSum / Double(tapEvents.count))
-        
-        return errorPercentSum / Double(tapEvents.count)
+        return Image(uiImage: renderer.uiImage!)
     }
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20.0) {
-                VStack(spacing: 20) {
+                VStack(alignment: .leading, spacing: 22) {
                     HStack {
                         Text("Estimated BPM")
                         Spacer()
-                        Text("\(60 / getAverage())")
+                        Text("\(analysis.getBPM())")
                             .monospaced()
                             .foregroundStyle(.gray)
                     }
                     HStack {
                         Text("Average Error")
                         Spacer()
-                        Text("\(getAverageErrorPercent() * 100)%")
+                        Text("\(analysis.getAverageErrorPercent() * 100)%")
                             .monospaced()
                             .foregroundStyle(.gray)
                     }
+                    ShareLink(item: shareResult(), preview: SharePreview("Result", image: shareResult()))
                 }
                 .padding(15.0)
                 .background(
@@ -87,17 +61,17 @@ struct GameResultView: View {
                     Text("Time Between Clicks")
                         .font(.title3)
                         .fontWeight(.bold)
-                    Text("Red dotted line represents average.")
+                    Text("(Miliseconds) Measured to nanosecond accuracy. Red dotted line represents average.")
                         .font(.footnote)
                         .foregroundStyle(.gray)
                     Chart {
-                        ForEach(getTimeTapDeltas()) {
+                        ForEach(analysis.getTimeTapDeltas()) {
                             LineMark(
                                 x: .value("Tap No.", $0.tapIndex),
-                                y: .value("Delta Time", $0.tapDelta)
+                                y: .value("Delta Time", $0.tapDelta / 1000000)
                             ).symbol(.circle)
                         }
-                        RuleMark(y: .value("Average", getAverage()))
+                        RuleMark(y: .value("Average", analysis.getAverage()/1000000))
                             .lineStyle(StrokeStyle(dash: [8, 5]))
                             .foregroundStyle(.red)
                     }
@@ -110,14 +84,14 @@ struct GameResultView: View {
                     Text("Error")
                         .font(.title3)
                         .fontWeight(.bold)
-                    Text("How early your hits were.")
+                    Text("(Miliseconds) Measured to nanosecond accuracy. How early your hits were.")
                         .font(.footnote)
                         .foregroundColor(Color.gray)
                     Chart {
-                        ForEach(getTimeTapDeltas()) {
+                        ForEach(analysis.getTimeTapDeltas()) {
                             LineMark(
                                 x: .value("Tap No.", $0.tapIndex),
-                                y: .value("Error", $0.tapError)
+                                y: .value("Error", $0.tapError / 1000000)
                             ).symbol(.circle)
                         }
                     }.aspectRatio(1.5, contentMode: .fit)
@@ -131,13 +105,13 @@ struct GameResultView: View {
                         .font(.footnote)
                         .foregroundStyle(.gray)
                     Chart {
-                        ForEach(getTimeTapDeltas()) {
+                        ForEach(analysis.getTimeTapDeltas()) {
                             LineMark(
                                 x: .value("Tap No.", $0.tapIndex),
                                 y: .value("Error", $0.tapErrorPercent * 100)
                             ).symbol(.circle)
                         }
-                        RuleMark(y: .value("Error", getAverageErrorPercent() * 100))
+                        RuleMark(y: .value("Error", analysis.getAverageErrorPercent() * 100))
                             .lineStyle(StrokeStyle(dash: [8, 5]))
                             .foregroundStyle(.red)
                     }.aspectRatio(1.5, contentMode: .fit)
@@ -158,12 +132,11 @@ struct GameResultView: View {
 
 struct GameResultPreviewView: View {
     // Fill with dummy data.
-    @State var tapTimes = [427625.64031666674, 427625.80227683345, 427625.97286316677, 427626.1523317084, 427626.3315825001, 427626.5190010418, 427626.69617254176, 427626.8730185001]
+    @State var tapTimes: [UInt64] = [485713545550208, 485714177899541, 485714905925416, 485715601694166, 485716276339750, 485716933804333, 485717581706916, 485718218984375]
     
     var body: some View {
-        GameResultView(tapTimes: $tapTimes)
+        GameResultView(analysis: GameDataAnalysis(rawTapTimes: tapTimes))
     }
-    
 }
 
 #Preview {

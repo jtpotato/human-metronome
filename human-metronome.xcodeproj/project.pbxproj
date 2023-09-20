@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F3EACEC2ABA767400F73C53 /* Attempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3EACEB2ABA767400F73C53 /* Attempt.swift */; };
+		2F3EACEF2ABA876300F73C53 /* HistoryGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3EACEE2ABA876300F73C53 /* HistoryGraphView.swift */; };
 		2FA71B142AB9933500C42B03 /* human_metronomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA71B132AB9933500C42B03 /* human_metronomeApp.swift */; };
 		2FA71B162AB9933500C42B03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA71B152AB9933500C42B03 /* ContentView.swift */; };
 		2FA71B182AB9933600C42B03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FA71B172AB9933600C42B03 /* Assets.xcassets */; };
@@ -15,12 +17,12 @@
 		2FA71B2F2AB9933600C42B03 /* human_metronomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA71B2E2AB9933600C42B03 /* human_metronomeUITests.swift */; };
 		2FA71B312AB9933600C42B03 /* human_metronomeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA71B302AB9933600C42B03 /* human_metronomeUITestsLaunchTests.swift */; };
 		2FA71B3E2AB9981A00C42B03 /* GameResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA71B3D2AB9981A00C42B03 /* GameResultView.swift */; };
-		2FEB0AE62AB9B86500655CBA /* DataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB0AE52AB9B86500655CBA /* DataTypes.swift */; };
+		2FB21AC32ABA8DEA00CCE223 /* ShareGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB21AC22ABA8DEA00CCE223 /* ShareGraphic.swift */; };
 		2FEB0AE82AB9B90400655CBA /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB0AE72AB9B90400655CBA /* GameView.swift */; };
 		2FEB0AEB2AB9BA1A00655CBA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB0AE92AB9BA1A00655CBA /* Model.xcdatamodeld */; };
-		2FEB0AEE2AB9BE9300655CBA /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB0AED2AB9BE9300655CBA /* CoreDataController.swift */; };
-		2FEB0AFA2ABA69CB00655CBA /* Attempt+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB0AF82ABA69CB00655CBA /* Attempt+CoreDataClass.swift */; };
-		2FEB0AFB2ABA69CB00655CBA /* Attempt+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB0AF92ABA69CB00655CBA /* Attempt+CoreDataProperties.swift */; };
+		2FEB0AFE2ABA6B8D00655CBA /* GameDataAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB0AFD2ABA6B8D00655CBA /* GameDataAnalysis.swift */; };
+		2FFA0E852ABA703C0022316F /* DataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA0E842ABA703C0022316F /* DataTypes.swift */; };
+		2FFA0E882ABA70850022316F /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA0E872ABA70850022316F /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F3EACEB2ABA767400F73C53 /* Attempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attempt.swift; sourceTree = "<group>"; };
+		2F3EACEE2ABA876300F73C53 /* HistoryGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryGraphView.swift; sourceTree = "<group>"; };
 		2FA71B102AB9933500C42B03 /* human-metronome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "human-metronome.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA71B132AB9933500C42B03 /* human_metronomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = human_metronomeApp.swift; sourceTree = "<group>"; };
 		2FA71B152AB9933500C42B03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,12 +56,12 @@
 		2FA71B2E2AB9933600C42B03 /* human_metronomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = human_metronomeUITests.swift; sourceTree = "<group>"; };
 		2FA71B302AB9933600C42B03 /* human_metronomeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = human_metronomeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2FA71B3D2AB9981A00C42B03 /* GameResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultView.swift; sourceTree = "<group>"; };
-		2FEB0AE52AB9B86500655CBA /* DataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypes.swift; sourceTree = "<group>"; };
+		2FB21AC22ABA8DEA00CCE223 /* ShareGraphic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareGraphic.swift; sourceTree = "<group>"; };
 		2FEB0AE72AB9B90400655CBA /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		2FEB0AEA2AB9BA1A00655CBA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		2FEB0AED2AB9BE9300655CBA /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
-		2FEB0AF82ABA69CB00655CBA /* Attempt+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attempt+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		2FEB0AF92ABA69CB00655CBA /* Attempt+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attempt+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		2FEB0AFD2ABA6B8D00655CBA /* GameDataAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataAnalysis.swift; sourceTree = "<group>"; };
+		2FFA0E842ABA703C0022316F /* DataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypes.swift; sourceTree = "<group>"; };
+		2FFA0E872ABA70850022316F /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +89,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F3EACED2ABA875500F73C53 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				2F3EACEE2ABA876300F73C53 /* HistoryGraphView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		2FA71B072AB9933500C42B03 = {
 			isa = PBXGroup;
 			children = (
-				2FEB0AED2AB9BE9300655CBA /* CoreDataController.swift */,
 				2FA71B122AB9933500C42B03 /* human-metronome */,
 				2FA71B232AB9933600C42B03 /* human-metronomeTests */,
 				2FA71B2D2AB9933600C42B03 /* human-metronomeUITests */,
@@ -109,12 +120,13 @@
 		2FA71B122AB9933500C42B03 /* human-metronome */ = {
 			isa = PBXGroup;
 			children = (
-				2FEB0AF32ABA697600655CBA /* Data */,
+				2FB21AC12ABA8DDF00CCE223 /* Sharing */,
+				2F3EACED2ABA875500F73C53 /* History */,
+				2FFA0E862ABA70770022316F /* Data */,
 				2FA71B132AB9933500C42B03 /* human_metronomeApp.swift */,
 				2FA71B152AB9933500C42B03 /* ContentView.swift */,
 				2FEB0AE92AB9BA1A00655CBA /* Model.xcdatamodeld */,
 				2FEB0AEC2AB9BC0700655CBA /* Game */,
-				2FEB0AE52AB9B86500655CBA /* DataTypes.swift */,
 				2FA71B172AB9933600C42B03 /* Assets.xcassets */,
 				2FA71B192AB9933600C42B03 /* Preview Content */,
 			);
@@ -146,20 +158,38 @@
 			path = "human-metronomeUITests";
 			sourceTree = "<group>";
 		};
+		2FB21AC12ABA8DDF00CCE223 /* Sharing */ = {
+			isa = PBXGroup;
+			children = (
+				2FB21AC22ABA8DEA00CCE223 /* ShareGraphic.swift */,
+			);
+			path = Sharing;
+			sourceTree = "<group>";
+		};
 		2FEB0AEC2AB9BC0700655CBA /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				2FEB0AFC2ABA6B7A00655CBA /* GameMath */,
 				2FEB0AE72AB9B90400655CBA /* GameView.swift */,
 				2FA71B3D2AB9981A00C42B03 /* GameResultView.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
 		};
-		2FEB0AF32ABA697600655CBA /* Data */ = {
+		2FEB0AFC2ABA6B7A00655CBA /* GameMath */ = {
 			isa = PBXGroup;
 			children = (
-				2FEB0AF82ABA69CB00655CBA /* Attempt+CoreDataClass.swift */,
-				2FEB0AF92ABA69CB00655CBA /* Attempt+CoreDataProperties.swift */,
+				2FEB0AFD2ABA6B8D00655CBA /* GameDataAnalysis.swift */,
+			);
+			path = GameMath;
+			sourceTree = "<group>";
+		};
+		2FFA0E862ABA70770022316F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2FFA0E842ABA703C0022316F /* DataTypes.swift */,
+				2FFA0E872ABA70850022316F /* PersistenceManager.swift */,
+				2F3EACEB2ABA767400F73C53 /* Attempt.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -294,14 +324,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F3EACEC2ABA767400F73C53 /* Attempt.swift in Sources */,
 				2FA71B162AB9933500C42B03 /* ContentView.swift in Sources */,
-				2FEB0AFA2ABA69CB00655CBA /* Attempt+CoreDataClass.swift in Sources */,
-				2FEB0AE62AB9B86500655CBA /* DataTypes.swift in Sources */,
+				2FEB0AFE2ABA6B8D00655CBA /* GameDataAnalysis.swift in Sources */,
 				2FA71B3E2AB9981A00C42B03 /* GameResultView.swift in Sources */,
-				2FEB0AEE2AB9BE9300655CBA /* CoreDataController.swift in Sources */,
+				2FB21AC32ABA8DEA00CCE223 /* ShareGraphic.swift in Sources */,
+				2F3EACEF2ABA876300F73C53 /* HistoryGraphView.swift in Sources */,
+				2FFA0E882ABA70850022316F /* PersistenceManager.swift in Sources */,
 				2FA71B142AB9933500C42B03 /* human_metronomeApp.swift in Sources */,
-				2FEB0AFB2ABA69CB00655CBA /* Attempt+CoreDataProperties.swift in Sources */,
 				2FEB0AE82AB9B90400655CBA /* GameView.swift in Sources */,
+				2FFA0E852ABA703C0022316F /* DataTypes.swift in Sources */,
 				2FEB0AEB2AB9BA1A00655CBA /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

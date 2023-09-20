@@ -12,6 +12,13 @@ struct ContentView: View {
         TabView {
             GameView()
                 .preferredColorScheme(.dark)
+                .tabItem {
+                    Label("Game", systemImage: "gamecontroller.fill")
+                }
+            HistoryGraphView()
+                .tabItem {
+                    Label("History", systemImage: "chart.xyaxis.line")
+                }
         }
         
     }
