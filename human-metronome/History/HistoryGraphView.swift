@@ -63,6 +63,25 @@ struct HistoryGraphView: View {
                         )
                     }
                 }
+                
+                VStack (alignment: .leading) {
+                    Text("Game Length and Accuracy")
+                        .font(.title3)
+                        .bold()
+                    Chart {
+                        ForEach(attempts, id: \.self) {
+                            attempt in
+                            PointMark(x: .value("Game Length", attempt.attemptLength), y: .value("Accuracy", (1 - attempt.errorPercent) * 100))
+                        }
+                    }
+                    .aspectRatio(1.5, contentMode: .fit)
+                    .chartYScale(domain: .automatic(includesZero: false))
+                    .chartYAxis {
+                        AxisMarks(
+                            format: Decimal.FormatStyle.Percent.percent.scale(1)
+                        )
+                    }
+                }
 
             }
         }.padding()

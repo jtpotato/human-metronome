@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct GameView: View {
+    private var gameLengths: [Double] = [8, 12, 16]
+    
     @State var tapCounter = 0
     @State var path = NavigationPath()
     @State var tapTimes: [UInt64] = []
+    @State var selectedGameLength: Double = 8
     
     @EnvironmentObject var manager: DataManager
     @Environment(\.managedObjectContext) private var viewContext
@@ -24,17 +27,23 @@ struct GameView: View {
         newAttempt.date = Date.now
         newAttempt.bpm = analysis.getBPM()
         newAttempt.errorPercent = analysis.getAverageErrorPercent()
+        newAttempt.attemptLength = selectedGameLength
         
         try? viewContext.save()
     }
     
     func onGameEnd() {
-        if (tapTimes.count > 8) {
-            tapTimes.removeFirst(tapTimes.count - 8)
+        if (tapTimes.count > Int(selectedGameLength)) {
+            tapTimes.removeFirst(tapTimes.count - Int(selectedGameLength))
         }
         tapCounter = 0
         
         print(tapTimes)
+        
+        // This is the code that doesnt work
+        // saveData()
+        
+        // This is the code that works
         
 #if DEBUG
         if (ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1") {
@@ -58,15 +67,24 @@ struct GameView: View {
                     tapTimes.append( DispatchTime.now().uptimeNanoseconds)
                     tapCounter += 1
                     
-                    if (tapCounter == 8) {
+                    if (tapCounter == Int(selectedGameLength)) {
                         onGameEnd()
                     }
                 }) {
                     Circle()
                         .frame(width: 120, height: 120)
                 }
-                Text("Tap \(8 - tapCounter) times.")
+                Text("Tap \(Int(selectedGameLength) - tapCounter) times.")
                 Spacer()
+                VStack (alignment: .leading) {
+                    Text("Game Length")
+                    Picker("Game Length", selection: $selectedGameLength) {
+                        ForEach(gameLengths, id: \.self) {
+                            gameLength in
+                            Text("\(String(format: "%.0f", gameLength))")
+                        }
+                    }.pickerStyle(.segmented)
+                }
             }
             .navigationDestination(for: String.self) {
                 destination in
