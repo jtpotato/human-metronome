@@ -273,7 +273,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2FA71B0B2AB9933500C42B03 /* Build configuration list for PBXProject "Can You Metronome?" */;
+			buildConfigurationList = 2FA71B0B2AB9933500C42B03 /* Build configuration list for PBXProject "human-metronome" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -629,7 +629,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2FA71B0B2AB9933500C42B03 /* Build configuration list for PBXProject "Can You Metronome?" */ = {
+		2FA71B0B2AB9933500C42B03 /* Build configuration list for PBXProject "human-metronome" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2FA71B322AB9933600C42B03 /* Debug */,
