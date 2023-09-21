@@ -40,6 +40,10 @@ struct GameView: View {
         
         print(tapTimes)
         
+        // Haptics
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+        
         // This is the code that doesnt work
         // saveData()
         
@@ -84,6 +88,10 @@ struct GameView: View {
                             Text("\(String(format: "%.0f", gameLength))")
                         }
                     }.pickerStyle(.segmented)
+                    .disabled(true)
+                    Text("(Paid) feature coming soon.")
+                        .foregroundStyle(.gray)
+                        .font(.caption)
                 }
             }
             .navigationDestination(for: String.self) {
