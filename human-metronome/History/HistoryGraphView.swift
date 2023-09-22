@@ -21,7 +21,13 @@ struct HistoryGraphView: View {
         ScrollView {
             VStack (spacing: 20) {
                 VStack(alignment: .leading) {
-                    Text("Accuracy Over Time")
+                    Text("Games and BPM")
+                        .font(.title3)
+                        .bold()
+                    GameHistoryBPMBuckets(attempts: attempts)
+                }
+                VStack(alignment: .leading) {
+                    Text("Precision Over Time")
                         .font(.title3)
                         .bold()
                     Chart {
@@ -29,7 +35,7 @@ struct HistoryGraphView: View {
                             attempt in
                             LineMark(
                                 x: .value("Date", attempt.date),
-                                y: .value("Accuracy", (1 - attempt.errorPercent) * 100)
+                                y: .value("Precision", (1 - attempt.errorPercent) * 100)
                             ).symbol(.circle)
                         }
                     }
@@ -43,7 +49,7 @@ struct HistoryGraphView: View {
                 }
                 
                 VStack (alignment: .leading) {
-                    Text("Accuracy and BPM")
+                    Text("Precision and BPM")
                         .font(.title3)
                         .bold()
                     Chart {
@@ -51,7 +57,7 @@ struct HistoryGraphView: View {
                             attempt in
                             PointMark(
                                 x: .value("BPM", attempt.bpm),
-                                y: .value("Accuracy", (1 - attempt.errorPercent) * 100)
+                                y: .value("Precision", (1 - attempt.errorPercent) * 100)
                             ).symbol(.circle)
                         }
                     }
@@ -65,13 +71,13 @@ struct HistoryGraphView: View {
                 }
                 
                 VStack (alignment: .leading) {
-                    Text("Game Length and Accuracy")
+                    Text("Game Length and Precision")
                         .font(.title3)
                         .bold()
                     Chart {
                         ForEach(attempts, id: \.self) {
                             attempt in
-                            PointMark(x: .value("Game Length", attempt.attemptLength), y: .value("Accuracy", (1 - attempt.errorPercent) * 100))
+                            PointMark(x: .value("Game Length", attempt.attemptLength), y: .value("Precision", (1 - attempt.errorPercent) * 100))
                         }
                     }
                     .aspectRatio(1.5, contentMode: .fit)
