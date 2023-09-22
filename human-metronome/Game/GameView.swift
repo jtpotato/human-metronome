@@ -81,8 +81,8 @@ struct GameView: View {
                 Text("Tap \(Int(selectedGameLength) - tapCounter) times.")
                 Spacer()
                 VStack (alignment: .leading) {
-                    Text("Game Length")
-                    Picker("Game Length", selection: $selectedGameLength) {
+                    Text("Attempt Length")
+                    Picker("Attempt Length", selection: $selectedGameLength) {
                         ForEach(gameLengths, id: \.self) {
                             gameLength in
                             Text("\(String(format: "%.0f", gameLength))")

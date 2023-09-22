@@ -17,21 +17,31 @@ struct HistoryGraphView: View {
             NSSortDescriptor(key: #keyPath(Attempt.date), ascending: true)
         ]) private var attempts: FetchedResults<Attempt>
     
+    private func getNonManagedAttempts() -> [NonManagedAttempt] {
+        var nonManagedAttempts: [NonManagedAttempt] = []
+        
+        for attempt in attempts {
+            nonManagedAttempts.append(NonManagedAttempt(
+                bpm: attempt.bpm,
+                date: attempt.date,
+                errorPercent: attempt.errorPercent,
+                attemptLength: attempt.attemptLength
+            ))
+        }
+        
+        return nonManagedAttempts
+    }
+    
     var body: some View {
         ScrollView {
             VStack (spacing: 20) {
-                VStack(alignment: .leading) {
-                    Text("Games and BPM")
-                        .font(.title3)
-                        .bold()
-                    GameHistoryBPMBuckets(attempts: attempts)
-                }
+                InitialStatsView(attempts: getNonManagedAttempts())
                 VStack(alignment: .leading) {
                     Text("Precision Over Time")
                         .font(.title3)
                         .bold()
                     Chart {
-                        ForEach(attempts, id: \.self) {
+                        ForEach(getNonManagedAttempts(), id: \.self) {
                             attempt in
                             LineMark(
                                 x: .value("Date", attempt.date),
@@ -53,7 +63,7 @@ struct HistoryGraphView: View {
                         .font(.title3)
                         .bold()
                     Chart {
-                        ForEach(attempts, id: \.self) {
+                        ForEach(getNonManagedAttempts(), id: \.self) {
                             attempt in
                             PointMark(
                                 x: .value("BPM", attempt.bpm),
@@ -75,7 +85,7 @@ struct HistoryGraphView: View {
                         .font(.title3)
                         .bold()
                     Chart {
-                        ForEach(attempts, id: \.self) {
+                        ForEach(getNonManagedAttempts(), id: \.self) {
                             attempt in
                             PointMark(x: .value("Game Length", attempt.attemptLength), y: .value("Precision", (1 - attempt.errorPercent) * 100))
                         }
