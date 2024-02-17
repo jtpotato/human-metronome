@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct GameView: View {
+  @State private var currentGame = GameManager()
+  
   var body: some View {
     NavigationStack {
       VStack(spacing: 40.0) {
@@ -15,7 +17,7 @@ struct GameView: View {
         Text("Tap with a consistent beat.")
           .multilineTextAlignment(.center)
         Button(action: {
-          onButtonTap(gameState)
+          onButtonTap(currentGameState)
           onGameEnd(gameState: gameState, viewContext: viewContext)
         }) {
           Circle()

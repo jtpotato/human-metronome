@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2F3EACEF2ABA876300F73C53 /* HistoryGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3EACEE2ABA876300F73C53 /* HistoryGraphView.swift */; };
-		2F8405C12AC80F4300FE1792 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8405C02AC80F4300FE1792 /* GameState.swift */; };
+		2F8405C12AC80F4300FE1792 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8405C02AC80F4300FE1792 /* GameManager.swift */; };
 		2F9B417A2AC81D2F009564D7 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B41792AC81D2F009564D7 /* GameView.swift */; };
-		2F9B417C2AC81F7A009564D7 /* ButtonTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B417B2AC81F7A009564D7 /* ButtonTap.swift */; };
-		2F9B417E2AC82158009564D7 /* GameEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B417D2AC82158009564D7 /* GameEnd.swift */; };
 		2FA71B142AB9933500C42B03 /* human_metronomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA71B132AB9933500C42B03 /* human_metronomeApp.swift */; };
 		2FA71B162AB9933500C42B03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA71B152AB9933500C42B03 /* ContentView.swift */; };
 		2FA71B182AB9933600C42B03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FA71B172AB9933600C42B03 /* Assets.xcassets */; };
@@ -49,10 +47,8 @@
 
 /* Begin PBXFileReference section */
 		2F3EACEE2ABA876300F73C53 /* HistoryGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryGraphView.swift; sourceTree = "<group>"; };
-		2F8405C02AC80F4300FE1792 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		2F8405C02AC80F4300FE1792 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		2F9B41792AC81D2F009564D7 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		2F9B417B2AC81F7A009564D7 /* ButtonTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTap.swift; sourceTree = "<group>"; };
-		2F9B417D2AC82158009564D7 /* GameEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEnd.swift; sourceTree = "<group>"; };
 		2FA71B102AB9933500C42B03 /* human-metronome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "human-metronome.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA71B132AB9933500C42B03 /* human_metronomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = human_metronomeApp.swift; sourceTree = "<group>"; };
 		2FA71B152AB9933500C42B03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -185,7 +181,7 @@
 			children = (
 				2FEB0AFC2ABA6B7A00655CBA /* GameLogic */,
 				2FA71B3D2AB9981A00C42B03 /* GameResultView.swift */,
-				2F8405C02AC80F4300FE1792 /* GameState.swift */,
+				2F8405C02AC80F4300FE1792 /* GameManager.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -194,8 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				2FEB0AFD2ABA6B8D00655CBA /* GameDataAnalysis.swift */,
-				2F9B417B2AC81F7A009564D7 /* ButtonTap.swift */,
-				2F9B417D2AC82158009564D7 /* GameEnd.swift */,
 			);
 			path = GameLogic;
 			sourceTree = "<group>";
@@ -380,12 +374,10 @@
 				2F9B417A2AC81D2F009564D7 /* GameView.swift in Sources */,
 				2FB21AC32ABA8DEA00CCE223 /* ShareGraphic.swift in Sources */,
 				2F3EACEF2ABA876300F73C53 /* HistoryGraphView.swift in Sources */,
-				2F9B417C2AC81F7A009564D7 /* ButtonTap.swift in Sources */,
 				2FFFDD742B807CCF0012AA29 /* AttemptV1_0_0.swift in Sources */,
-				2F9B417E2AC82158009564D7 /* GameEnd.swift in Sources */,
 				2FA71B142AB9933500C42B03 /* human_metronomeApp.swift in Sources */,
 				2FEB9D9F2ABD94A000922D93 /* InitialStatsView.swift in Sources */,
-				2F8405C12AC80F4300FE1792 /* GameState.swift in Sources */,
+				2F8405C12AC80F4300FE1792 /* GameManager.swift in Sources */,
 				2FFA0E852ABA703C0022316F /* DataTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

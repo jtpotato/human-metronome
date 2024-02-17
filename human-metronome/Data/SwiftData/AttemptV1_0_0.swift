@@ -18,12 +18,12 @@ enum AttemptSchemaV1: VersionedSchema {
   
   @Model
   class Attempt {
-    var attemptLength: Double
+    var attemptLength: Int
     var bpm: Double
     var date: Date
     var errorPercent: Double
     
-    init(attemptLength: Double, bpm: Double, date: Date, errorPercent: Double) {
+    init(attemptLength: Int, bpm: Double, date: Date, errorPercent: Double) {
       self.attemptLength = attemptLength
       self.bpm = bpm
       self.date = date
