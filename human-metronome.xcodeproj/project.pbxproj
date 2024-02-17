@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F3EACEC2ABA767400F73C53 /* Attempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3EACEB2ABA767400F73C53 /* Attempt.swift */; };
 		2F3EACEF2ABA876300F73C53 /* HistoryGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3EACEE2ABA876300F73C53 /* HistoryGraphView.swift */; };
+		2F8405C12AC80F4300FE1792 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8405C02AC80F4300FE1792 /* GameState.swift */; };
+		2F9B417A2AC81D2F009564D7 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B41792AC81D2F009564D7 /* GameView.swift */; };
+		2F9B417C2AC81F7A009564D7 /* ButtonTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B417B2AC81F7A009564D7 /* ButtonTap.swift */; };
+		2F9B417E2AC82158009564D7 /* GameEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B417D2AC82158009564D7 /* GameEnd.swift */; };
 		2FA71B142AB9933500C42B03 /* human_metronomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA71B132AB9933500C42B03 /* human_metronomeApp.swift */; };
 		2FA71B162AB9933500C42B03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA71B152AB9933500C42B03 /* ContentView.swift */; };
 		2FA71B182AB9933600C42B03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FA71B172AB9933600C42B03 /* Assets.xcassets */; };
@@ -18,13 +21,13 @@
 		2FA71B312AB9933600C42B03 /* human_metronomeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA71B302AB9933600C42B03 /* human_metronomeUITestsLaunchTests.swift */; };
 		2FA71B3E2AB9981A00C42B03 /* GameResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA71B3D2AB9981A00C42B03 /* GameResultView.swift */; };
 		2FB21AC32ABA8DEA00CCE223 /* ShareGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB21AC22ABA8DEA00CCE223 /* ShareGraphic.swift */; };
-		2FEB0AE82AB9B90400655CBA /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB0AE72AB9B90400655CBA /* GameView.swift */; };
-		2FEB0AEB2AB9BA1A00655CBA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB0AE92AB9BA1A00655CBA /* Model.xcdatamodeld */; };
 		2FEB0AFE2ABA6B8D00655CBA /* GameDataAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB0AFD2ABA6B8D00655CBA /* GameDataAnalysis.swift */; };
 		2FEB9D9F2ABD94A000922D93 /* InitialStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB9D9E2ABD94A000922D93 /* InitialStatsView.swift */; };
-		2FEB9DA12ABD959300922D93 /* NonManagedAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB9DA02ABD959300922D93 /* NonManagedAttempt.swift */; };
 		2FFA0E852ABA703C0022316F /* DataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA0E842ABA703C0022316F /* DataTypes.swift */; };
-		2FFA0E882ABA70850022316F /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA0E872ABA70850022316F /* PersistenceManager.swift */; };
+		2FFFDD742B807CCF0012AA29 /* AttemptV1_0_0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFDD732B807CCF0012AA29 /* AttemptV1_0_0.swift */; };
+		2FFFDD762B8085A00012AA29 /* AttemptVersions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFDD752B8085A00012AA29 /* AttemptVersions.swift */; };
+		2FFFDD7C2B808D430012AA29 /* Attempts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFDD7B2B808D430012AA29 /* Attempts.swift */; };
+		2FFFDD7F2B808E4C0012AA29 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFDD7E2B808E4C0012AA29 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2F3EACEB2ABA767400F73C53 /* Attempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attempt.swift; sourceTree = "<group>"; };
 		2F3EACEE2ABA876300F73C53 /* HistoryGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryGraphView.swift; sourceTree = "<group>"; };
+		2F8405C02AC80F4300FE1792 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		2F9B41792AC81D2F009564D7 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		2F9B417B2AC81F7A009564D7 /* ButtonTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTap.swift; sourceTree = "<group>"; };
+		2F9B417D2AC82158009564D7 /* GameEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEnd.swift; sourceTree = "<group>"; };
 		2FA71B102AB9933500C42B03 /* human-metronome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "human-metronome.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA71B132AB9933500C42B03 /* human_metronomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = human_metronomeApp.swift; sourceTree = "<group>"; };
 		2FA71B152AB9933500C42B03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,13 +65,13 @@
 		2FA71B302AB9933600C42B03 /* human_metronomeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = human_metronomeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2FA71B3D2AB9981A00C42B03 /* GameResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultView.swift; sourceTree = "<group>"; };
 		2FB21AC22ABA8DEA00CCE223 /* ShareGraphic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareGraphic.swift; sourceTree = "<group>"; };
-		2FEB0AE72AB9B90400655CBA /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		2FEB0AEA2AB9BA1A00655CBA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		2FEB0AFD2ABA6B8D00655CBA /* GameDataAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataAnalysis.swift; sourceTree = "<group>"; };
 		2FEB9D9E2ABD94A000922D93 /* InitialStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialStatsView.swift; sourceTree = "<group>"; };
-		2FEB9DA02ABD959300922D93 /* NonManagedAttempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonManagedAttempt.swift; sourceTree = "<group>"; };
 		2FFA0E842ABA703C0022316F /* DataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypes.swift; sourceTree = "<group>"; };
-		2FFA0E872ABA70850022316F /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		2FFFDD732B807CCF0012AA29 /* AttemptV1_0_0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttemptV1_0_0.swift; sourceTree = "<group>"; };
+		2FFFDD752B8085A00012AA29 /* AttemptVersions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttemptVersions.swift; sourceTree = "<group>"; };
+		2FFFDD7B2B808D430012AA29 /* Attempts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attempts.swift; sourceTree = "<group>"; };
+		2FFFDD7E2B808E4C0012AA29 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,15 +131,18 @@
 		2FA71B122AB9933500C42B03 /* human-metronome */ = {
 			isa = PBXGroup;
 			children = (
+				2FFFDD7D2B808E150012AA29 /* screens */,
+				2FFFDD7A2B808D2C0012AA29 /* examples */,
+				2FFFDD772B80871F0012AA29 /* components */,
 				2FB21AC12ABA8DDF00CCE223 /* Sharing */,
 				2F3EACED2ABA875500F73C53 /* History */,
 				2FFA0E862ABA70770022316F /* Data */,
 				2FA71B132AB9933500C42B03 /* human_metronomeApp.swift */,
 				2FA71B152AB9933500C42B03 /* ContentView.swift */,
-				2FEB0AE92AB9BA1A00655CBA /* Model.xcdatamodeld */,
 				2FEB0AEC2AB9BC0700655CBA /* Game */,
 				2FA71B172AB9933600C42B03 /* Assets.xcassets */,
 				2FA71B192AB9933600C42B03 /* Preview Content */,
+				2FFFDD7E2B808E4C0012AA29 /* Constants.swift */,
 			);
 			path = "human-metronome";
 			sourceTree = "<group>";
@@ -174,30 +183,62 @@
 		2FEB0AEC2AB9BC0700655CBA /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				2FEB0AFC2ABA6B7A00655CBA /* GameMath */,
-				2FEB0AE72AB9B90400655CBA /* GameView.swift */,
+				2FEB0AFC2ABA6B7A00655CBA /* GameLogic */,
 				2FA71B3D2AB9981A00C42B03 /* GameResultView.swift */,
+				2F8405C02AC80F4300FE1792 /* GameState.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
 		};
-		2FEB0AFC2ABA6B7A00655CBA /* GameMath */ = {
+		2FEB0AFC2ABA6B7A00655CBA /* GameLogic */ = {
 			isa = PBXGroup;
 			children = (
 				2FEB0AFD2ABA6B8D00655CBA /* GameDataAnalysis.swift */,
+				2F9B417B2AC81F7A009564D7 /* ButtonTap.swift */,
+				2F9B417D2AC82158009564D7 /* GameEnd.swift */,
 			);
-			path = GameMath;
+			path = GameLogic;
 			sourceTree = "<group>";
 		};
 		2FFA0E862ABA70770022316F /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				2FFFDD722B807CB80012AA29 /* SwiftData */,
 				2FFA0E842ABA703C0022316F /* DataTypes.swift */,
-				2FFA0E872ABA70850022316F /* PersistenceManager.swift */,
-				2F3EACEB2ABA767400F73C53 /* Attempt.swift */,
-				2FEB9DA02ABD959300922D93 /* NonManagedAttempt.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		2FFFDD722B807CB80012AA29 /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				2FFFDD732B807CCF0012AA29 /* AttemptV1_0_0.swift */,
+				2FFFDD752B8085A00012AA29 /* AttemptVersions.swift */,
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
+		2FFFDD772B80871F0012AA29 /* components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		2FFFDD7A2B808D2C0012AA29 /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				2FFFDD7B2B808D430012AA29 /* Attempts.swift */,
+			);
+			path = examples;
+			sourceTree = "<group>";
+		};
+		2FFFDD7D2B808E150012AA29 /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				2F9B41792AC81D2F009564D7 /* GameView.swift */,
+			);
+			path = screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,19 +371,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F3EACEC2ABA767400F73C53 /* Attempt.swift in Sources */,
 				2FA71B162AB9933500C42B03 /* ContentView.swift in Sources */,
+				2FFFDD7F2B808E4C0012AA29 /* Constants.swift in Sources */,
+				2FFFDD762B8085A00012AA29 /* AttemptVersions.swift in Sources */,
 				2FEB0AFE2ABA6B8D00655CBA /* GameDataAnalysis.swift in Sources */,
 				2FA71B3E2AB9981A00C42B03 /* GameResultView.swift in Sources */,
+				2FFFDD7C2B808D430012AA29 /* Attempts.swift in Sources */,
+				2F9B417A2AC81D2F009564D7 /* GameView.swift in Sources */,
 				2FB21AC32ABA8DEA00CCE223 /* ShareGraphic.swift in Sources */,
 				2F3EACEF2ABA876300F73C53 /* HistoryGraphView.swift in Sources */,
-				2FEB9DA12ABD959300922D93 /* NonManagedAttempt.swift in Sources */,
-				2FFA0E882ABA70850022316F /* PersistenceManager.swift in Sources */,
+				2F9B417C2AC81F7A009564D7 /* ButtonTap.swift in Sources */,
+				2FFFDD742B807CCF0012AA29 /* AttemptV1_0_0.swift in Sources */,
+				2F9B417E2AC82158009564D7 /* GameEnd.swift in Sources */,
 				2FA71B142AB9933500C42B03 /* human_metronomeApp.swift in Sources */,
-				2FEB0AE82AB9B90400655CBA /* GameView.swift in Sources */,
 				2FEB9D9F2ABD94A000922D93 /* InitialStatsView.swift in Sources */,
+				2F8405C12AC80F4300FE1792 /* GameState.swift in Sources */,
 				2FFA0E852ABA703C0022316F /* DataTypes.swift in Sources */,
-				2FEB0AEB2AB9BA1A00655CBA /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,8 +553,8 @@
 				DEVELOPMENT_TEAM = HT9ZXTP3Z4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Can You Metronome?";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music-games";
+				INFOPLIST_KEY_CFBundleDisplayName = "Rhythm Game";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -543,8 +587,8 @@
 				DEVELOPMENT_TEAM = HT9ZXTP3Z4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Can You Metronome?";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music-games";
+				INFOPLIST_KEY_CFBundleDisplayName = "Rhythm Game";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -682,19 +726,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		2FEB0AE92AB9BA1A00655CBA /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				2FEB0AEA2AB9BA1A00655CBA /* Model.xcdatamodel */,
-			);
-			currentVersion = 2FEB0AEA2AB9BA1A00655CBA /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 2FA71B082AB9933500C42B03 /* Project object */;
 }

@@ -8,22 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        TabView {
-            GameView()
-                .preferredColorScheme(.dark)
-                .tabItem {
-                    Label("Game", systemImage: "gamecontroller.fill")
-                }
-            HistoryGraphView()
-                .tabItem {
-                    Label("History", systemImage: "chart.xyaxis.line")
-                }
+  var body: some View {
+    TabView {
+      GameView()
+        .tabItem {
+          Label("Game", systemImage: "gamecontroller.fill")
         }
-        
+      HistoryGraphView()
+        .tabItem {
+          Label("History", systemImage: "chart.xyaxis.line")
+        }
     }
+    .preferredColorScheme(.dark)
+  }
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }

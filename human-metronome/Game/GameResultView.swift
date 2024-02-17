@@ -38,9 +38,9 @@ struct GameResultView: View {
                             .foregroundStyle(.gray)
                     }
                     HStack {
-                        Text("Average Error")
+                        Text("Accuracy")
                         Spacer()
-                        Text("\(analysis.getAverageErrorPercent() * 100)%")
+                        Text("\((1 - analysis.getAverageErrorPercent()) * 100)%")
                             .monospaced()
                             .foregroundStyle(.gray)
                     }
@@ -132,7 +132,7 @@ struct GameResultView: View {
 
 struct GameResultPreviewView: View {
     // Fill with dummy data.
-    @State var tapTimes: [UInt64] = [485713545550208, 485714177899541, 485714905925416, 485715601694166, 485716276339750, 485716933804333, 485717581706916, 485718218984375]
+    @State private var tapTimes: [UInt64] = [485713545550208, 485714177899541, 485714905925416, 485715601694166, 485716276339750, 485716933804333, 485717581706916, 485718218984375]
     
     var body: some View {
         GameResultView(analysis: GameDataAnalysis(rawTapTimes: tapTimes))

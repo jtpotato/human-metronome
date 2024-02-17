@@ -8,9 +8,9 @@
 import Foundation
 
 struct TapEvent: Identifiable {
-    var id = UUID()
-    var tapIndex: Int
-    var tapDelta: Double
-    var tapError: Double
-    var tapErrorPercent: Double
+  var id = UUID()
+  var tapIndex: Int
+  var tapDelta: Double
+  var tapError: Double
+  var tapErrorPercent: Double
 }
