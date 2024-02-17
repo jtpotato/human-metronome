@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: Remove reliance on this. I don't get it anymore.
 struct TapEvent: Identifiable {
   var id = UUID()
   var tapIndex: Int

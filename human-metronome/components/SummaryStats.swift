@@ -8,7 +8,9 @@
 import SwiftUI
 import SwiftData
 
-struct InitialStatsView: View {  
+struct SummaryStats: View {
+  var attempts: [Attempt]
+  
   var body: some View {
     Group {
       ScrollView() {
@@ -40,5 +42,5 @@ struct InitialStatsView: View {
 }
 
 #Preview {
-  InitialStatsView()
+  SummaryStats(attempts: ExampleAttempts)
 }

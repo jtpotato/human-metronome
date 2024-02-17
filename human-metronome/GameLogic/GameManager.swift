@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 import Observation
 
 @Observable
@@ -14,18 +15,18 @@ class GameManager {
   var tapTimes: [UInt64] = []
   var selectedGameLength: Int = 8
   
-  func tap(onGameEnd: () -> Void) {
+  func tap(modelContext: ModelContext, onGameEnd: (GameDataAnalysis) -> Void) {
     tapTimes.append(DispatchTime.now().uptimeNanoseconds)
     tapCounter += 1
     
     // check if game should end
     if (tapTimes.count >= selectedGameLength) {
-      gameEndTasks()
-      onGameEnd()
+      let analysis = gameEndTasks(modelContext)
+      onGameEnd(analysis)
     }
   }
   
-  private func gameEndTasks() {
+  private func gameEndTasks(_ context: ModelContext) -> GameDataAnalysis {
     // Haptics
     let generator = UINotificationFeedbackGenerator()
     generator.notificationOccurred(.success)
@@ -33,5 +34,8 @@ class GameManager {
     // Analytics
     let analysis = GameDataAnalysis(rawTapTimes: tapTimes)
     let newAttempt = Attempt(attemptLength: selectedGameLength, bpm: analysis.getBPM(), date: Date.now, errorPercent: analysis.getAverageErrorPercent())
+    context.insert(newAttempt) // save to SwiftData
+    
+    return analysis
   }
 }
