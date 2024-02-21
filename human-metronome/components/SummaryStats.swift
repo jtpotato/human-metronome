@@ -11,6 +11,10 @@ import SwiftData
 struct SummaryStats: View {
   var attempts: [Attempt]
   
+  func oldestDate() -> Date? {
+    return attempts.min { a, b in a.date < b.date }?.date
+  }
+  
   var body: some View {
     Group {
       ScrollView() {
@@ -22,25 +26,32 @@ struct SummaryStats: View {
             Text("Total Attempts")
           }
           VStack {
-            Text(String(format: "%.0f", sortAttempts(sortType: "bpm")[0].bpm))
-              .font(.title3)
-              .bold()
+            Text(String(format: "%.0f", (
+              attempts.max { a, b in a.bpm < b.bpm }
+            )?.bpm ?? "-"))
+            .font(.title3)
+            .bold()
             Text("Fastest BPM")
           }
           VStack {
-            Text(sortAttempts(sortType: "date")[0].date, style: .date)
-              .font(.title3)
-              .bold()
-              .lineLimit(1)
-            Text("Playing since")
+            if oldestDate() != nil {
+              Text(oldestDate()!, style: .date)
+                .font(.title3)
+                .bold()
+                .lineLimit(1)
+              Text("Playing since")
+            }
           }
         }.frame(maxWidth: .infinity)
       }
-      
     }.padding()
   }
 }
 
 #Preview {
-  SummaryStats(attempts: ExampleAttempts)
+  let config = ModelConfiguration(isStoredInMemoryOnly: true)
+  let container = try! ModelContainer(for: Attempt.self, configurations: config)
+
+  return SummaryStats(attempts: ExampleAttempts)
+    .modelContainer(container)
 }

@@ -15,7 +15,7 @@ struct HistoryGraphView: View {
   var body: some View {
     ScrollView {
       VStack (spacing: 20) {
-        InitialStatsView(attempts: attempts)
+        SummaryStats(attempts: attempts)
         VStack(alignment: .leading) {
           Text("Precision Over Time")
             .font(.title3)
