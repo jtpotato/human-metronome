@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F3EACEF2ABA876300F73C53 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3EACEE2ABA876300F73C53 /* HistoryView.swift */; };
+		2F67B56C2B860B2B002D0034 /* HistoryChartViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F67B56B2B860B2B002D0034 /* HistoryChartViewModifier.swift */; };
 		2F8405C12AC80F4300FE1792 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8405C02AC80F4300FE1792 /* GameManager.swift */; };
 		2F9B417A2AC81D2F009564D7 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B41792AC81D2F009564D7 /* GameView.swift */; };
 		2FA71B142AB9933500C42B03 /* human_metronomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA71B132AB9933500C42B03 /* human_metronomeApp.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		2F3EACEE2ABA876300F73C53 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		2F67B56B2B860B2B002D0034 /* HistoryChartViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryChartViewModifier.swift; sourceTree = "<group>"; };
 		2F8405C02AC80F4300FE1792 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		2F9B41792AC81D2F009564D7 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		2FA71B102AB9933500C42B03 /* human-metronome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "human-metronome.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +102,7 @@
 		2F3EACED2ABA875500F73C53 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				2F67B56B2B860B2B002D0034 /* HistoryChartViewModifier.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				2FFFDD812B8093530012AA29 /* Analysis.swift in Sources */,
 				2FA71B3E2AB9981A00C42B03 /* GameResultView.swift in Sources */,
 				2FFFDD7C2B808D430012AA29 /* Attempts.swift in Sources */,
+				2F67B56C2B860B2B002D0034 /* HistoryChartViewModifier.swift in Sources */,
 				2F9B417A2AC81D2F009564D7 /* GameView.swift in Sources */,
 				2FB21AC32ABA8DEA00CCE223 /* ShareGraphic.swift in Sources */,
 				2F3EACEF2ABA876300F73C53 /* HistoryView.swift in Sources */,

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct GameView: View {
   @Environment(\.modelContext) private var context
@@ -23,10 +24,11 @@ struct GameView: View {
           currentGame.tap(modelContext: context) { analysis in
             // on game end handler. should make it more clear.
             path.append(analysis)
+            print("navigating")
           }
         }) {
           Circle()
-            .frame(width: 240, height: 240)
+            .frame(width: 160, height: 200)
         }
         
         Text("Tap \(currentGame.selectedGameLength - currentGame.tapCounter) times.")
@@ -43,10 +45,17 @@ struct GameView: View {
         }
       }
       .padding()
+      .navigationDestination(for: GameDataAnalysis.self) { analysis in
+        GameResultView(analysis: analysis)
+      }
     }
   }
 }
 
 #Preview {
-  GameView()
+  let config = ModelConfiguration(isStoredInMemoryOnly: true)
+  let container = try! ModelContainer(for: Attempt.self, configurations: config)
+  
+  return GameView()
+    .modelContainer(container)
 }

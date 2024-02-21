@@ -10,7 +10,7 @@ import SwiftData
 import Charts
 
 struct HistoryGraphView: View {
-  @Query var attempts: [Attempt]
+  @Query(sort: \Attempt.date) var attempts: [Attempt]
   
   var body: some View {
     ScrollView {
@@ -20,17 +20,15 @@ struct HistoryGraphView: View {
           Text("Precision Over Time")
             .font(.title3)
             .bold()
-          Chart {
-            ForEach(attempts, id: \.self) {
-              attempt in
-              LineMark(
-                x: .value("Date", attempt.date),
-                y: .value("Precision", (1 - attempt.errorPercent) * 100)
-              ).symbol(.circle)
-            }
+          Chart(attempts) {
+            LineMark(
+              x: .value("Date", $0.date),
+              y: .value("Precision", (1 - $0.errorPercent) * 100)
+            ).symbol(.circle)
           }
-          .aspectRatio(1.5, contentMode: .fit)
-          .chartYScale(domain: .automatic(includesZero: false))
+          .historyChartView()
+          .chartScrollPosition(initialX: Date.now)
+          .chartXVisibleDomain(length: 60 * 60 * 24 * 7)
           .chartYAxis {
             AxisMarks(
               format: Decimal.FormatStyle.Percent.percent.scale(1)
@@ -42,17 +40,15 @@ struct HistoryGraphView: View {
           Text("Precision and BPM")
             .font(.title3)
             .bold()
-          Chart {
-            ForEach(attempts, id: \.self) {
-              attempt in
-              PointMark(
-                x: .value("BPM", attempt.bpm),
-                y: .value("Precision", (1 - attempt.errorPercent) * 100)
-              ).symbol(.circle)
-            }
+          Chart (attempts){
+            PointMark(
+              x: .value("BPM", $0.bpm),
+              y: .value("Precision", (1 - $0.errorPercent) * 100)
+            ).symbol(.circle)
           }
-          .aspectRatio(1.5, contentMode: .fit)
-          .chartYScale(domain: .automatic(includesZero: false))
+          .historyChartView()
+          .chartScrollPosition(initialX: 120)
+          .chartXVisibleDomain(length: 300)
           .chartYAxis {
             AxisMarks(
               format: Decimal.FormatStyle.Percent.percent.scale(1)
@@ -61,25 +57,35 @@ struct HistoryGraphView: View {
         }
         
         VStack (alignment: .leading) {
-          Text("Game Length and Precision")
+          Text("Precision and Game Length")
             .font(.title3)
             .bold()
-          Chart {
-            ForEach(attempts, id: \.self) {
-              attempt in
-              PointMark(x: .value("Game Length", attempt.attemptLength), y: .value("Precision", (1 - attempt.errorPercent) * 100))
-            }
+          Chart (attempts){
+            PointMark(x: .value("Game Length", $0.attemptLength), y: .value("Precision", (1 - $0.errorPercent) * 100))
           }
-          .aspectRatio(1.5, contentMode: .fit)
-          .chartYScale(domain: .automatic(includesZero: false))
+          .historyChartView()
+          .chartScrollPosition(initialX: 0)
+          .chartXVisibleDomain(length: 48)
           .chartYAxis {
             AxisMarks(
               format: Decimal.FormatStyle.Percent.percent.scale(1)
             )
           }
         }
-        
       }
-    }.padding()
+      .padding()
+    }
   }
+}
+
+#Preview {
+  let config = ModelConfiguration(isStoredInMemoryOnly: true)
+  let container = try! ModelContainer(for: Attempt.self, configurations: config)
+  let context = container.mainContext
+  for attempt in ExampleAttempts {
+    context.insert(attempt)
+  }
+  
+  return HistoryGraphView()
+    .modelContainer(container)
 }

@@ -14,7 +14,8 @@ struct GameResultView: View {
   var analysis: GameDataAnalysis
   
   // why is this on MainActor !?!?!
-  @MainActor func shareResult() -> Image {
+  @MainActor
+  func shareResult() -> Image {
     let bpm = analysis.getBPM()
     let accuracyPercent = 1 - analysis.getAverageErrorPercent()
     

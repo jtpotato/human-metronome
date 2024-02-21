@@ -36,6 +36,10 @@ class GameManager {
     let newAttempt = Attempt(attemptLength: selectedGameLength, bpm: analysis.getBPM(), date: Date.now, errorPercent: analysis.getAverageErrorPercent())
     context.insert(newAttempt) // save to SwiftData
     
+    // Reset all
+    tapCounter = 0
+    tapTimes = []
+    
     return analysis
   }
 }

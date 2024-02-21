@@ -14,5 +14,6 @@ struct human_metronomeApp: App {
     WindowGroup {
       ContentView()
     }
+    .modelContainer(for: Attempt.self)
   }
 }
