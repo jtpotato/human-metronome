@@ -63,7 +63,7 @@ struct GameResultView: View {
           Text("Time Between Clicks")
             .font(.title3)
             .fontWeight(.bold)
-          Text("(Miliseconds) Measured to nanosecond accuracy. Red dotted line represents average.")
+          Text("(Miliseconds) Measured per frame. Red dotted line represents average.")
             .font(.footnote)
             .foregroundStyle(.gray)
           Chart {
@@ -86,7 +86,7 @@ struct GameResultView: View {
           Text("Error")
             .font(.title3)
             .fontWeight(.bold)
-          Text("(Miliseconds) Measured to nanosecond accuracy. How early your hits were.")
+          Text("(Miliseconds) Measured per frame. How early your hits were.")
             .font(.footnote)
             .foregroundColor(Color.gray)
           Chart {

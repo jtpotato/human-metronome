@@ -14,10 +14,21 @@ class GameManager {
   var tapCounter = 0
   var tapTimes: [UInt64] = []
   var selectedGameLength: Int = 8
+  var gameInProgress = false
+  private var hapticFeedbackGenerator = UIImpactFeedbackGenerator(style: .rigid)
+  
+  func startHaptics() {
+    hapticFeedbackGenerator.prepare()
+  }
   
   func tap(modelContext: ModelContext, onGameEnd: (GameDataAnalysis) -> Void) {
+    gameInProgress = true
+    
     tapTimes.append(DispatchTime.now().uptimeNanoseconds)
     tapCounter += 1
+    
+    // haptics
+    hapticFeedbackGenerator.impactOccurred()
     
     // check if game should end
     if (tapTimes.count >= selectedGameLength) {
@@ -26,11 +37,7 @@ class GameManager {
     }
   }
   
-  private func gameEndTasks(_ context: ModelContext) -> GameDataAnalysis {
-    // Haptics
-    let generator = UINotificationFeedbackGenerator()
-    generator.notificationOccurred(.success)
-    
+  private func gameEndTasks(_ context: ModelContext) -> GameDataAnalysis {    
     // Analytics
     let analysis = GameDataAnalysis(rawTapTimes: tapTimes)
     let newAttempt = Attempt(attemptLength: selectedGameLength, bpm: analysis.getBPM(), date: Date.now, errorPercent: analysis.getAverageErrorPercent())
@@ -39,6 +46,7 @@ class GameManager {
     // Reset all
     tapCounter = 0
     tapTimes = []
+    gameInProgress = false
     
     return analysis
   }

@@ -12,6 +12,15 @@ import Charts
 struct HistoryGraphView: View {
   @Query(sort: \Attempt.date) var attempts: [Attempt]
   
+  func findDomain() -> TimeInterval {
+    if let earliestAttempt = attempts.first {
+      let difference = Date.now.timeIntervalSince(earliestAttempt.date)
+      return difference / 2
+    }
+    
+    return 30
+  }
+  
   var body: some View {
     ScrollView {
       VStack (spacing: 20) {
@@ -28,7 +37,7 @@ struct HistoryGraphView: View {
           }
           .historyChartView()
           .chartScrollPosition(initialX: Date.now)
-          .chartXVisibleDomain(length: 60 * 60 * 24 * 7)
+          .chartXVisibleDomain(length: findDomain())
           .chartYAxis {
             AxisMarks(
               format: Decimal.FormatStyle.Percent.percent.scale(1)
@@ -61,11 +70,11 @@ struct HistoryGraphView: View {
             .font(.title3)
             .bold()
           Chart (attempts){
-            PointMark(x: .value("Game Length", $0.attemptLength), y: .value("Precision", (1 - $0.errorPercent) * 100))
+            PointMark(
+              x: .value("Game Length", $0.attemptLength),
+              y: .value("Precision", (1 - $0.errorPercent) * 100)
+            )
           }
-          .historyChartView()
-          .chartScrollPosition(initialX: 0)
-          .chartXVisibleDomain(length: 48)
           .chartYAxis {
             AxisMarks(
               format: Decimal.FormatStyle.Percent.percent.scale(1)

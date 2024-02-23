@@ -24,7 +24,6 @@ struct GameView: View {
           currentGame.tap(modelContext: context) { analysis in
             // on game end handler. should make it more clear.
             path.append(analysis)
-            print("navigating")
           }
         }) {
           Circle()
@@ -41,7 +40,9 @@ struct GameView: View {
               gameLength in
               Text("\(gameLength)")
             }
-          }.pickerStyle(.segmented)
+          }
+          .disabled(currentGame.gameInProgress)
+          .pickerStyle(.segmented)
         }
       }
       .padding()
