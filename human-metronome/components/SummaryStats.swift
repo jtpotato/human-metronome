@@ -17,8 +17,8 @@ struct SummaryStats: View {
   
   var body: some View {
     Group {
-      ScrollView() {
-        VStack (alignment: .center, spacing: 40) {
+      VStack (spacing: 40) {
+        HStack (spacing: 40) {
           VStack {
             Text(String(attempts.count))
               .font(.title3)
@@ -33,16 +33,17 @@ struct SummaryStats: View {
             .bold()
             Text("Fastest BPM")
           }
-          VStack {
-            if oldestDate() != nil {
-              Text(oldestDate()!, style: .date)
-                .font(.title3)
-                .bold()
-                .lineLimit(1)
-              Text("Playing since")
-            }
-          }
         }.frame(maxWidth: .infinity)
+        
+        VStack {
+          if oldestDate() != nil {
+            Text(oldestDate()!, style: .date)
+              .font(.title3)
+              .bold()
+              .lineLimit(1)
+            Text("Playing since")
+          }
+        }
       }
     }.padding()
   }
@@ -51,7 +52,7 @@ struct SummaryStats: View {
 #Preview {
   let config = ModelConfiguration(isStoredInMemoryOnly: true)
   let container = try! ModelContainer(for: Attempt.self, configurations: config)
-
+  
   return SummaryStats(attempts: ExampleAttempts)
     .modelContainer(container)
 }

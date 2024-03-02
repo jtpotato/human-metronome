@@ -20,7 +20,7 @@ struct ContentView: View {
           Label("History", systemImage: "chart.xyaxis.line")
         }
     }
-    .preferredColorScheme(.dark)
+//    .preferredColorScheme(.dark)
   }
 }
 
