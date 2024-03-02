@@ -20,15 +20,16 @@ struct GameView: View {
         Spacer()
         Text("Tap with a consistent beat.")
           .multilineTextAlignment(.center)
-        Button(action: {
-          currentGame.tap(modelContext: context) { analysis in
-            // on game end handler. should make it more clear.
-            path.append(analysis)
+        Circle()
+          .fill(Color.accentColor)
+          .frame(width: 160, height: 200)
+          .shadow(color: .accentColor, radius: 10)
+          .onLongPressGesture(minimumDuration: 0) {
+            currentGame.tap(modelContext: context) { analysis in
+              // on game end handler. should make it more clear.
+              path.append(analysis)
+            }
           }
-        }) {
-          Circle()
-            .frame(width: 160, height: 200)
-        }
         
         Text("Tap \(currentGame.selectedGameLength - currentGame.tapCounter) times.")
         Spacer()
